@@ -1,17 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    char linha[10] = {'A','B','C','D','E','F','G','H','I','J'};
+    char colunas[10] = {'A','B','C','D','E','F','G','H','I','J'};
     int tabuleiro[10][10];
 
-    printf("BATALHA NAVAL!\n");
-    // Inicializando o tabuleiro com 0
+    printf(" BATALHA NAVAL!\n");
+
+    // Inicializa o tabuleiro com 0
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
             tabuleiro[i][j] = 0;
         }
     }
- // Posiciona navio vertical (coluna 2: índices [1][2], [2][2], [3][2])
+
+    // Posiciona navio vertical (coluna 2: índices [1][2], [2][2], [3][2])
  tabuleiro[1][2] = 1;
  tabuleiro[2][2] = 1;
  tabuleiro[3][2] = 1;
@@ -22,18 +24,18 @@ int main() {
  tabuleiro[7][7] = 1;
  tabuleiro[7][8] = 1;
  
-    // Imprime o cabeçalho das colunas (números 1 a 10)
-    printf("   ");  // espaço para o canto superior esquerdo
+    // Imprime as letras no topo (colunas)
+    printf("    "); // espaço para alinhar com os números
     for (int j = 0; j < 10; j++) {
-        printf(" %2d", j + 1);
+        printf(" %c ", colunas[j]);
     }
     printf("\n");
 
-    // Imprime cada linha (letra + valores da linha)
+    // Imprime o tabuleiro com os números à esquerda (linhas)
     for (int i = 0; i < 10; i++) {
-        printf(" %c ", linha[i]);  // letra da linha
+        printf("%2d ", i + 1); // imprime o número da linha
         for (int j = 0; j < 10; j++) {
-            printf(" %2d", tabuleiro[i][j]);
+            printf(" %d ", tabuleiro[i][j]); // imprime o valor da célula
         }
         printf("\n");
     }
